@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>跨标签页同步计时器</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>同步计时器</h1>
+    <div id="display" class="display" data-status="idle">00:00.0</div>
+    <div id="status" class="status">初始化…</div>
+
+    <div class="controls">
+      <button id="btn-start" type="button">开始</button>
+      <button id="btn-pause" type="button">暂停</button>
+      <button id="btn-reset" type="button">重置</button>
+    </div>
+
+    <div class="duration">
+      <label>
+        分
+        <input id="minutes" type="number" min="0" max="999" value="10" />
+      </label>
+      <label>
+        秒
+        <input id="seconds" type="number" min="0" max="59" value="0" />
+      </label>
+      <button id="btn-set" type="button">设置时长</button>
+    </div>
+
+    <div id="meta" class="meta"></div>
+    <p class="hint">在多个标签页中打开本页面，所有标签页的时间保持一致。</p>
+  </main>
+
+  <script src="sync-timer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
